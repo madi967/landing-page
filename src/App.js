@@ -9,6 +9,7 @@ import { Widget,addResponseMessage , addLinkSnippet, addUserMessage  } from 'rea
 import 'react-chat-widget/lib/styles.css';
 import logo from './components/images/avatar.png';
 import logocarcam from './components/images/logo.jpg';
+import { ContactForm } from './comps/ContactForm/ContactForm';
 
  
 const gradients = [
@@ -29,42 +30,18 @@ class App extends Component {
       sujet:"",
       detail:"",
     }
-    this.handleSubmit=this.handleSubmit.bind(this);
-    this.handleChange=this.handleChange.bind(this);
   }
   
   
-handleSubmit () {
+  handleSubmit =  () =>  {
   //to do: make a sweet backend to send the mail with sender: email, text:sujet and detail
   alert('Please contact :+237.697.103.538');
   }
 
-  handleChange(event){
-    if(event.target.name==="nom"){
-      this.setState({
-        nom:event.target.value,
-      });
-    }
-    if(event.target.name==="email"){
-      this.setState({
-        email:event.target.value,
-      });
-    }
-    if(event.target.name==="numero"){
-      this.setState({
-        numero:event.target.value,
-      });
-    }
-    if(event.target.name==="sujet"){
-      this.setState({
-        sujet:event.target.value,
-      });
-    }
-    if(event.target.name==="detail"){
-      this.setState({
-        detail:event.target.value,
-      });
-    }
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]:event.target.value,
+    });
       
   }
   handleNewUserMessage = (newMessage) => {
@@ -131,6 +108,8 @@ handleSubmit () {
               nom={this.state.nom} email={this.state.email} numero={this.state.numero}
               sujet={this.state.sujet} detail={this.state.detail}/>
         
+
+        <ContactForm/>
         </body>
         <footer>
           <div className="footer">

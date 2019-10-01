@@ -89,11 +89,10 @@ button:hover{
   background: #282c34;
   color: #fff;
 }
-input {
- 
+input, 
+select {
 	height: 40px;
-  width: 30%;
-  margin: 5px;
+  width: 100%;
   color: blue;
 }
 select{
@@ -103,8 +102,6 @@ select{
 }
 textarea{
   height: 100px;
-  width: 30%;
-  margin: 5px;
 }
 .login{
   display: block;
