@@ -66,7 +66,7 @@ export const ContactForm = () => {
       {formData.map(itemData => (
         <InputHandler {...itemData} onChange={onChange} />
       ))}
-      <button>Envoyer</button>
+      <button style={{alignSelf: 'center'}}>Envoyer</button>
     </form>
   );
 };
