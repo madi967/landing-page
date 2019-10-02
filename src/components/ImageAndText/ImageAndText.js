@@ -75,10 +75,34 @@ export const ImageAndText = () => {
   return (
     <div
       style={{
-        backgroundImage: `url(${imageData[imageToShow].src})`
+        backgroundImage: `url(${imageData[imageToShow].src})`,
       }}
       className="carcam_image_and_text"
     >
+      <nav className="carcam_nav row wrap">
+        <div className="row flex-1">
+          <img src={"./images/logo.jpg"} alter="logo" className="carcam_logo" />
+          <label>Une nouvelle vision de l'autopartage</label>
+        </div>
+        <div className="flex-1 row space-between wrap" style={{ padding: 20 }}>
+          <a
+            href="tel:+237 697 103 538"
+            style={{
+              textDecoration: "none",
+              color: "inherit",
+              whiteSpace: "nowrap"
+            }}
+          >
+            InfoLine: +237 697 103 538
+          </a>
+          <a
+            href="#contact"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            Contact Us
+          </a>
+        </div>
+      </nav>
       <TextComponent {...textToShow} />
       <Timer_ />
     </div>
