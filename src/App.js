@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import Image_ from './components/Image_';
-import { Gradient } from 'react-gradient';
 import Texte from './components/Texte';
 import  Login from './components/Login';
 import Timer from './components/Timer_';
@@ -10,6 +9,7 @@ import 'react-chat-widget/lib/styles.css';
 import logo from './components/images/avatar.png';
 import logocarcam from './components/images/logo.jpg';
 import { ContactForm } from './comps/ContactForm/ContactForm';
+import { ImageAndText } from './comps/ImageAndText/ImageAndText';
 
  
 const gradients = [
@@ -57,12 +57,7 @@ class App extends Component {
     return (
       <div className="App">
         
-        <Gradient
-          gradients={ gradients } // required
-          property="background"
-          duration={ 3000 }
-          angle="90deg"
-        > 
+        
         <header>
           <div className="header">
             <nav>
@@ -77,40 +72,8 @@ class App extends Component {
             </nav>
           </div>
         </header>
-        </Gradient>
-        <body >
-        <Widget handleNewUserMessage={this.handleNewUserMessage}
-                profileAvatar={logo}
-                title="carcam"
-                subtitle="Une nouvelle vision de l'autoparge"
-                senderPlaceHolder="Ecrire un message" 
-               /* handleQuickButtonClicked fonction utiliser pour savoir quand	l'utilisateur clique sur le bouton fermer la conversation*/
-               />
-          <div className="image">
-            <Image_/>
-          </div>
-          <div className="texte">
-            <Texte/>
-          </div>
-          <div className="timer">
-            <Gradient
-            gradients={ gradients } // required
-            property="background"
-            duration={ 300000 }
-            angle="0deg"
-            >
-              <div className="timerjj">J-J</div>
-              <Timer/>
-            </Gradient>
-          </div>
-          <label id="login"></label>
-          <Login  handleSubmit={this.handleSubmit} handleChange={this.handleChange} 
-              nom={this.state.nom} email={this.state.email} numero={this.state.numero}
-              sujet={this.state.sujet} detail={this.state.detail}/>
-        
-
+        <ImageAndText/>
         <ContactForm/>
-        </body>
         <footer>
           <div className="footer">
             <a href="https://www.uzenze.com" target="_blank">Copyright © 2019 | made by uzenze </a>

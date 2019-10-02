@@ -92,7 +92,6 @@ button:hover{
 input, 
 select {
 	height: 40px;
-  width: 100%;
   color: blue;
 }
 select{
@@ -110,26 +109,50 @@ textarea{
   margin-top: 8%;
 
 }
-.timer{
-  height: 100px;
-  justify-content: center;
-  padding-top:2% ;
 
+
+/* CARCAM CSS */
+
+.carcam_image_and_text {
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: white;
+  text-shadow: black 1px 1px;
 }
-.timerjj{
-  display: block;
-  color: #fff;
-  font-size: 40px;
-  font-style: italic;
-  font-weight: bold;
-}
-.timer-element{
- 
-  color: #eee;
-  font-size: 250%;
-  font-weight: bold;
+
+.carcam_timer{
+  position: absolute;
+  bottom: 30px;
+  font-size: 23px;
+  margin: auto;
   align-self: center;
+  width: 100%;
 }
+
+.carcam_text_component {
+  margin: auto;
+  max-width: 700px;
+}
+
+.carcam_text_component .title {
+font-size: 30px;
+}
+
+.carcam_text_component .description {
+font-size: 25px;
+margin-bottom: 20px;
+}
+
+.carcam_text_component .button:hover {
+  background:#09d3ac;
+  color: #fff;
+  font-weight: bold;
+}
+
 .button-text{
   text-decoration: none;
   text-decoration-color: #fff;

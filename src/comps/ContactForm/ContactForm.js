@@ -2,18 +2,10 @@ import React from "react";
 
 export const ContactForm = () => {
   const formData = [
-    { name: "name", placeholder: "Nom complet", required: true },
-    {
-      name: "email",
-      type: "email",
-      placeholder: "Adresse email",
-      required: true
-    },
-    { name: "phone", placeholder: "Numéro de téléphone", required: true },
     {
       name: "subject",
       type: "select",
-      label: "Objet",
+      label: "Objet :",
       required: true,
       options: [
         "Inscrire sa voiture pour le lancement",
@@ -22,6 +14,14 @@ export const ContactForm = () => {
         "Autre"
       ]
     },
+    { name: "name", placeholder: "Nom complet", required: true },
+    {
+      name: "email",
+      type: "email",
+      placeholder: "Adresse email",
+      required: true
+    },
+    { name: "phone", placeholder: "Numéro de téléphone", required: true },
     {
       name: "details",
       type: "textarea",
@@ -54,6 +54,7 @@ export const ContactForm = () => {
         e.preventDefault();
         onValidate(contactData);
       }}
+      id="contact"
       style={{
         display: "flex",
         flexDirection: "column",
@@ -66,7 +67,7 @@ export const ContactForm = () => {
       {formData.map(itemData => (
         <InputHandler {...itemData} onChange={onChange} />
       ))}
-      <button style={{alignSelf: 'center'}}>Envoyer</button>
+      <button style={{ alignSelf: "center" }}>Envoyer</button>
     </form>
   );
 };
@@ -78,9 +79,9 @@ const InputHandler = ({ type, ...inputData }) => {
     case "select":
       const selectOptions = inputData.options || [];
       return (
-        <div>
+        <div style={{ display: "flex", alignItems: "center" }}>
           {inputData.label && <label>{inputData.label}</label>}
-          <select {...inputData}>
+          <select {...inputData} style={{ flex: 1, ...inputData.style }}>
             {selectOptions.map(selectOption => {
               const { value, text } =
                 typeof selectOption === "string"
