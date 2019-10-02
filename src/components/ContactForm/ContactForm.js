@@ -30,7 +30,9 @@ export const ContactForm = () => {
     }
   ];
 
-  const [contactData, useContactData] = React.useState();
+  const [contactData, useContactData] = React.useState({
+    subject: "Inscrire sa voiture pour le lancement"
+  });
 
   const onChange = e => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -42,10 +44,10 @@ export const ContactForm = () => {
       console.log(contactData);
       if (itemData.required && !contactData[itemData.name]) {
         console.log("here good", itemData.name);
-        alert(`Le champ ${itemData.name} n'est pas rempli`);
         return null;
       }
     }
+    alert("Please contact InfoLine: +237 697 103 538");
   };
 
   return (
@@ -64,6 +66,9 @@ export const ContactForm = () => {
         margin: "auto"
       }}
     >
+      <div style={{ marginBottom: 30, fontWeight: "bold" }}>
+        Pour toute information, veuillez remplir le formulaire ci-dessous
+      </div>
       {formData.map(itemData => (
         <InputHandler {...itemData} onChange={onChange} />
       ))}

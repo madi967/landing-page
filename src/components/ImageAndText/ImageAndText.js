@@ -1,6 +1,6 @@
 import React from "react";
 import { useInterval } from "../../utils/useInterval";
-import Timer_ from "../../components/Timer_";
+import Timer_ from "../Timer_";
 
 const imageData = [
   {

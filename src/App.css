@@ -147,7 +147,55 @@ font-size: 25px;
 margin-bottom: 20px;
 }
 
-.carcam_text_component .button:hover {
+* {
+  box-sizing: border-box;
+}
+
+.carcam_nav {
+ background-color: transparent;
+ position: absolute;
+ top: 0;
+ color: white;
+ text-shadow: black 1px 1px;
+ z-index: 3;
+ width: 100%;
+ display: flex;
+ padding: 20px;
+}
+
+.carcam_logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  display: block;
+  align-self: center;
+  justify-self: center;
+  margin-right: 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.wrap {
+  flex-wrap: wrap;  
+}
+
+.flex-1 {
+  flex:1;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+button:hover {
   background:#09d3ac;
   color: #fff;
   font-weight: bold;

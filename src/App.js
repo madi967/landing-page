@@ -1,49 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
-import Image_ from './components/Image_';
-import Texte from './components/Texte';
-import  Login from './components/Login';
-import Timer from './components/Timer_';
-import { Widget,addResponseMessage , addLinkSnippet, addUserMessage  } from 'react-chat-widget';
+import { addResponseMessage  } from 'react-chat-widget';
 import 'react-chat-widget/lib/styles.css';
-import logo from './components/images/avatar.png';
-import logocarcam from './components/images/logo.jpg';
-import { ContactForm } from './comps/ContactForm/ContactForm';
-import { ImageAndText } from './comps/ImageAndText/ImageAndText';
+import { ContactForm } from './components/ContactForm/ContactForm';
+import { ImageAndText } from './components/ImageAndText/ImageAndText';
 
- 
-const gradients = [
-    ['#00f', '#6600a1'],
-    ['#00a','#660030'],
-    ['#005', '#660030'],
-    ['#00a','#660030'],
-    ['#00f', '#6600a1'],
-];
+
 
 class App extends Component {
   constructor(props){
     super(props);
-    this.state={
-      nom:"",
-      email:"",
-      numero:"",
-      sujet:"",
-      detail:"",
-    }
-  }
-  
-  
-  handleSubmit =  () =>  {
-  //to do: make a sweet backend to send the mail with sender: email, text:sujet and detail
-  alert('Please contact :+237.697.103.538');
   }
 
-  handleChange = (event) => {
-    this.setState({
-      [event.target.name]:event.target.value,
-    });
-      
-  }
   handleNewUserMessage = (newMessage) => {
     console.log(`New message incoming! ${newMessage}`);
     // Now send the message throught the backend API
@@ -56,22 +24,16 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-        
-        
-        <header>
-          <div className="header">
-            <nav>
-              <div className="logo">
-                <img src={logocarcam} alter="logo" className="logo192"/>
+            <nav className="carcam_nav row wrap">
+              <div className="row flex-1">
+                <img src={'./images/logo.jpg'} alter="logo" className="carcam_logo"/>
                 <label>Une nouvelle vision de l'autopartage</label>
               </div>
-              <div>
-                <span>InfoLine:+237.697.103.538</span>
-                <span><a href="#login">Contact Us</a></span>
+              <div className='flex-1 row space-between wrap' style={{padding: 20}}>
+                <a href='tel:+237 697 103 538' style={{textDecoration: 'none', color: 'inherit', whiteSpace: 'nowrap'}}>InfoLine: +237 697 103 538</a>
+                <a href="#contact" style={{textDecoration: 'none', color: 'inherit'}}>Contact Us</a>
               </div>
             </nav>
-          </div>
-        </header>
         <ImageAndText/>
         <ContactForm/>
         <footer>

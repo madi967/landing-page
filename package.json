@@ -3,17 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "ac-react-simple-image-slider": "^0.0.9",
     "react": "^16.9.0",
-    "react-animated-slider": "^1.1.4",
     "react-chat-widget": "^2.1.5",
     "react-compound-timer": "^1.1.5",
     "react-dom": "^16.9.0",
-    "react-form-validator-core": "^0.6.4",
-    "react-gradient": "^1.0.2",
-    "react-scripts": "3.1.2",
-    "react-text": "^3.2.1",
-    "validator": "^11.1.0"
+    "react-scripts": "3.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
